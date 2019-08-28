@@ -3,9 +3,6 @@ package router
 import (
 	"log"
 
-	. "../Controller"
-	. "../Function/Middleware"
-
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 )
@@ -17,14 +14,9 @@ func Apps() {
 	}
 	route := gin.Default()
 
-	// Router Group V1
-	V1 := route.Group("api/v1")
-	// Use Middleware
-	V1.Use(MiddleJwt)
-
-	// Child Route V1
-	V1.GET("/role", GetRoleUser)
-	V1.GET("/view/history", GetBookingHistory)
+	// Module route
+	Version1(route)
+	Home(route)
 
 	route.Run()
 }
