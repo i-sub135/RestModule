@@ -15,4 +15,5 @@ func Version1(route *gin.Engine) {
 	// Child Route V1
 	V1.GET("/role", GetRoleUser)
 	V1.GET("/view/history", GetBookingHistory)
+
 }
