@@ -3,12 +3,13 @@ package controller
 import (
 	"net/http"
 
-	. "../Model"
+	Model "../Model"
 	"github.com/gin-gonic/gin"
 )
 
+// GetRoleUser -- Get Data User
 func GetRoleUser(res *gin.Context) {
-	data := GetData()
+	data := Model.GetData()
 	if len(data) > 0 {
 		res.JSON(http.StatusOK, gin.H{
 			"code":    http.StatusOK,
@@ -26,8 +27,9 @@ func GetRoleUser(res *gin.Context) {
 	}
 }
 
+// GetBookingHistory -- Get data History Biiking
 func GetBookingHistory(res *gin.Context) {
-	data := GetDataHistory()
+	data := Model.GetDataHistory()
 	if len(data) > 0 {
 		res.JSON(http.StatusOK, gin.H{
 			"code":    http.StatusOK,

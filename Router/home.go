@@ -6,11 +6,12 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// Home --- root Router
 func Home(route *gin.Engine) {
 	route.GET("/", func(res *gin.Context) {
 		res.JSON(http.StatusOK, gin.H{
 			"code":    http.StatusOK,
-			"message": "Data NotFound",
+			"message": "Home Api",
 			"result": map[string]string{
 				"pesan": "Micro Services",
 			},

@@ -1,17 +1,19 @@
 package model
 
 import (
-	. "../Struct"
+	Struct "../Struct"
 )
 
-func GetData() []RoleUser {
-	var roleUsers []RoleUser
+// GetData -- ORM Get Data User
+func GetData() []Struct.RoleUser {
+	var roleUsers []Struct.RoleUser
 	db.Find(&roleUsers)
 	return roleUsers
 }
 
-func GetDataHistory() []ViewHistory {
-	var viewHistory []ViewHistory
+// GetDataHistory -- ORM Get data History
+func GetDataHistory() []Struct.ViewHistory {
+	var viewHistory []Struct.ViewHistory
 	db.Find(&viewHistory)
 	return viewHistory
 }
